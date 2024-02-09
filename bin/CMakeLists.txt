@@ -1,0 +1,10 @@
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
+add_executable(${PROJECT_NAME} main.cpp)
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
+include_directories("${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/include")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/lib/libcpr.a")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/lib/libcurl.a")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/lib/libssl.a")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/lib/libcrypto.a")
+target_link_libraries(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/libs/vcpkg/installed/x64-linux/lib/libz.a")
